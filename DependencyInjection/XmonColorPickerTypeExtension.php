@@ -26,7 +26,7 @@ class XmonColorPickerTypeExtension extends Extension
         $loader->load('services.yml');
 
         $container->setParameter('xmon_cpt.test', $config['test']);
-        $container->setParameter('xmon_cpt.image_frame', $config['config']['test']);
+        $container->setParameter('xmon_cpt.config_test', $config['config']['test']);
         
     }
 }
