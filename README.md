@@ -34,7 +34,8 @@ assetic:
     bundles:        [ 'XmonColorPickerTypeBundle' ]
 ```
 
-## Include the template for the layout. You can modify the template in your own bundle
+## Include the template for the layout. 
+You can modify the template in your own bundle.
 
 ```yml
 # your config.yml
@@ -44,3 +45,14 @@ twig:
             # This uses the default - you can put your own one here
             - 'XmonColorPickerTypeBundle:Form:fields.html.twig'
 ```
+
+## How to use in your form. 
+
+```php
+$builder->add('field', 'xmon_color_picker')
+```
+
+### Credits
+
+ - Thanks proyect used by this one:
+	 - [jscolor](http://jscolor.com/)
