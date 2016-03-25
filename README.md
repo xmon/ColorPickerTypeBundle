@@ -9,7 +9,7 @@ This Bundle use [jscolor](http://jscolor.com/).
 ## Installation
 
 ```sh
-$ php composer.phar require xmon/color-picker-type-bundle dev-master
+$ php composer.phar require xmon/color-picker-type-bundle
 ```
 
 ## Add Bundle to your application kernel
