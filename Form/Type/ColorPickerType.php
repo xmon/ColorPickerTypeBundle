@@ -8,24 +8,23 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class ColorPickerType extends AbstractType {
 
     public function configureOptions(OptionsResolver $resolver) {
-        dump("configureOptions");
+
         $resolver->setDefaults(array(
             'attr' => [
-                        'class' => 'jscolor'
-                    ]
-            ));
+                'class' => 'jscolor {required:false}'
+            ]
+        ));
     }
 
     public function getParent() {
         return 'text';
     }
-    
-    
+
     /**
      * {@inheritdoc}
      */
-    public function getName()
-    {
+    public function getName() {
         return 'xmon_color_picker';
     }
+
 }
