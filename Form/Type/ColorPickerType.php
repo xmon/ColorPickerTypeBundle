@@ -8,9 +8,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class ColorPickerType extends AbstractType {
 
     public function configureOptions(OptionsResolver $resolver) {
-        $resolver->setDefaults([
-            'placeholder' => 'que color',
-            ]);
+        dump("configureOptions");
+        $resolver->setDefaults(array(
+            'attr' => [
+                        'class' => 'jscolor'
+                    ]
+            ));
     }
 
     public function getParent() {
