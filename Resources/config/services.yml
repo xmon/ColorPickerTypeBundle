@@ -1,0 +1,8 @@
+parameters:
+    form.type.xmon_color_picker.class: Xmon\ColorPickerTypeBundle\Form\Type\ColorPickerType
+
+services:
+    form.type.xmon_color_picker:
+        class: %form.type.xmon_color_picker.class%
+        tags:
+            - { name: form.type, alias: xmon_color_picker }
