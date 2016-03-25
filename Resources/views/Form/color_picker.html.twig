@@ -1,0 +1,21 @@
+{% block xmon_color_picker_widget %}
+    <div {{ block('widget_container_attributes') }}>
+        
+        {% block xmon_color_picker_fields %} 
+            {% for child in form %}
+                {{ form_row(child) }}
+            {% endfor %}
+        {% endblock %}
+        
+        {% block xmon_color_picker_javascripts %}
+            
+            {% javascripts
+			'@XmonColorPickerTypeBundle/Resources/public/js/jscolor.min.js'
+            %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            
+        {% endblock %}
+        
+    </div>
+{% endblock %}
