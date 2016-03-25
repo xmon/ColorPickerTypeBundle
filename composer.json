@@ -2,7 +2,7 @@
     "name": "xmon/color-picker-type-bundle",
     "type": "symfony-bundle",
     "description": "The ColorPickerTypeBundle extends Symfony2 form types, creates a new ColorPicker form type, to display a javascript color picker.",
-    "keywords": ["symfony2", "color-picker", "bundle", "form-type", "jscolor"],
+    "keywords": ["symfony2", "color-picker", "bundle", "form-type", "jscolor", "sonata-admin"],
     "homepage": "https://github.com/xmon/ColorPickerTypeBundle",
     "license": "MIT",
     "authors": [

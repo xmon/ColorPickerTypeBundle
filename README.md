@@ -84,6 +84,8 @@ If you want change default message, try this:
 $builder->add('fieldName', 'xmon_color_picker')
 ```
 
+This form type can be used without any problem with ``SonataAdminBundle``
+
 ### Credits
 
  - Thanks proyect used by this one:
