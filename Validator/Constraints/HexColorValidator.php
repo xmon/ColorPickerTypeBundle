@@ -21,6 +21,30 @@ class HexColorValidator extends ConstraintValidator {
      * @api
      */
     public function validate($protocol, Constraint $constraint) {
+
+
+        if (is_null($constraint->requireHash)) {
+            $hashReg = '#{0,1}';
+        } else if ($constraint->requireHash === true) {
+            $hashReg = '#';
+        } else if ($constraint->requireHash === false) {
+            $hashReg = '';
+        } else {
+            throw new \Exception('The requireHash option value is NOT valid');
+        }
+
+        if (!$this->checkHexColor($protocol, $hashReg)) {
+            $this->context->buildViolation($constraint->message)
+                    ->setParameter('%color%', $protocol)
+                    ->addViolation();
+        }
+    }
+
+    /**
+     * @param $color
+     * @return bool
+     */
+    private function checkHexColor($color, $hashReg) {
         /**
          * OK:
          * #ffffff
@@ -34,23 +58,19 @@ class HexColorValidator extends ConstraintValidator {
          * hhhhhh
          * hhh
          */
-        if (is_null($constraint->requireHash)) {
-            $hashReg = '#{0,1}';
-        } else if ($constraint->requireHash === true) {
-            $hashReg = '#';
-        } else if ($constraint->requireHash === false) {
-            $hashReg = '';
-        } else {
-            throw new \Exception('The requireHash option value is NOT valid');
+        $return = false;
+
+        trim($color);
+
+        if (empty($color)) {
+            $return = true;
         }
 
-        if (!preg_match("/^$hashReg([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/", $protocol)) {
-            
-            $this->context->buildViolation($constraint->message)
-                ->setParameter('%color%', $protocol)
-                ->addViolation();
+        if (preg_match("/^$hashReg([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/", $color)) {
+            $return = true;
         }
-        return true;
+
+        return $return;
     }
 
 }

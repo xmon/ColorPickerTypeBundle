@@ -22,6 +22,6 @@ class HexColor extends Constraint {
      * false = The hash isn't allowed
      * @var type 
      */
-    public $requireHash = null;
+    public $requireHash = false;
 
 }
