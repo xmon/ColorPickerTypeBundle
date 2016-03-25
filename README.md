@@ -12,7 +12,7 @@ This Bundle use [jscolor](http://jscolor.com/).
 $ php composer.phar require xmon/color-picker-type-bundle
 ```
 
-## Add Bundle to your application kernel
+### Add Bundle to your application kernel
 ```php
 // app/AppKernel.php
 public function registerBundles()
@@ -24,8 +24,9 @@ public function registerBundles()
     );
 }
 ```
+## Configuration
 
-## Add ColorPickerTypeBundle to assetic
+### Add ColorPickerTypeBundle to assetic
 
 ```yml
 # app/config/config.yml
@@ -34,7 +35,7 @@ assetic:
     bundles:        [ 'XmonColorPickerTypeBundle' ]
 ```
 
-## Include the template for the layout. 
+### Include the template for the layout. 
 You can modify the template in your own bundle.
 
 ```yml
@@ -46,13 +47,46 @@ twig:
             - 'XmonColorPickerTypeBundle:Form:fields.html.twig'
 ```
 
-## How to use in your form. 
+## Usage
+
+### Add validation to your model. 
 
 ```php
-$builder->add('field', 'xmon_color_picker')
+// src/AppBundle/Entity/MyEntity.php
+
+use Symfony\Component\Validator\Constraints as Assert;
+use Xmon\ColorPickerTypeBundle\Validator\Constraints as XmonAssertColor;
+
+class MyEntity
+{
+
+    /**
+     * @ORM\Column(type="string", length=6, nullable=true)
+     * @XmonAssertColor\HexColor()
+     */
+    public $fieldName;
+
+}
+```
+
+If you want change default message, try this:
+```php
+    /**
+     * @XmonAssertColor\HexColor(
+     *      message = "Custom message for value (%color%)."
+     * )
+     */
+```
+
+### How to use in your form. 
+
+```php
+$builder->add('fieldName', 'xmon_color_picker')
 ```
 
 ### Credits
 
  - Thanks proyect used by this one:
 	 - [jscolor](http://jscolor.com/)
+ - Thanks proyect by inspiration:
+	 - [OhColorPickerTypeBundle](https://github.com/ollieLtd/OhColorPickerTypeBundle)
