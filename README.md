@@ -88,7 +88,7 @@ This form type can be used without any problem with ``SonataAdminBundle``
 
 ### Credits
 
- - Thanks proyect used by this one:
+ - Thanks project used by this one:
 	 - [jscolor](http://jscolor.com/)
- - Thanks proyect by inspiration:
+ - Thanks project by inspiration:
 	 - [OhColorPickerTypeBundle](https://github.com/ollieLtd/OhColorPickerTypeBundle)
