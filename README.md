@@ -35,7 +35,7 @@ assetic:
     bundles:        [ 'XmonColorPickerTypeBundle' ]
 ```
 
-### Include the template for the layout. 
+### [SYMFONY 2] Include the template for the layout. 
 You can modify the template in your own bundle.
 
 ```yml
@@ -43,6 +43,17 @@ You can modify the template in your own bundle.
 twig:
     form:
         resources:
+            # This uses the default - you can put your own one here
+            - 'XmonColorPickerTypeBundle:Form:fields.html.twig'
+```
+
+### [SYMFONY 3] Include the template for the layout.
+You can modify the template in your own bundle.
+
+```yml
+# your config.yml
+twig:
+    form_themes:
             # This uses the default - you can put your own one here
             - 'XmonColorPickerTypeBundle:Form:fields.html.twig'
 ```
@@ -78,10 +89,19 @@ If you want change default message, try this:
      */
 ```
 
-### How to use in your form. 
+### [SYMFONY 2] How to use in your form. 
 
 ```php
 $builder->add('fieldName', 'xmon_color_picker')
+```
+
+### [SYMFONY 3] How to use in your form. 
+
+```php
+use Xmon\ColorPickerTypeBundle\Form\Type\ColorPickerType;
+...
+$builder->add('fieldName', ColorPickerType::class)
+...
 ```
 
 This form type can be used without any problem with ``SonataAdminBundle``
