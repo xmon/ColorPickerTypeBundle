@@ -30,7 +30,7 @@ class Configuration implements ConfigurationInterface
                         ->children()
                             ->integerNode('test')
                                 ->info('test INFO.')
-                                ->cannotBeEmpty()
+                                ->min(1)->isRequired()
                                 ->defaultValue(640)
                             ->end()
                         ->end()
