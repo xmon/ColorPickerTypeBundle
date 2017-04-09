@@ -1,7 +1,7 @@
 ColorPickerTypeBundle
 ==============================
 
-The ``ColorPickerTypeBundle`` extends ``Symfony2`` form types, 
+The ``ColorPickerTypeBundle`` extends ``Symfony2/3`` form types, 
 creates a new  ``ColorPicker`` form type, to display a javascript color picker.
 
 This Bundle use [jscolor](http://jscolor.com/).
