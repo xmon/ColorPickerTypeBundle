@@ -17,13 +17,13 @@ class ColorPickerType extends AbstractType {
     }
 
     public function getParent() {
-        return 'text';
+        return TextTypeTest::class;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getName() {
+    public function getBlockSuffix() {
         return 'xmon_color_picker';
     }
 
