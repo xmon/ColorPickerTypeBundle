@@ -3,6 +3,7 @@
 namespace Xmon\ColorPickerTypeBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ColorPickerType extends AbstractType {
@@ -17,13 +18,13 @@ class ColorPickerType extends AbstractType {
     }
 
     public function getParent() {
-        return 'text';
+        return TextType::class;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getName() {
+    public function getBlockSuffix() {
         return 'xmon_color_picker';
     }
 
