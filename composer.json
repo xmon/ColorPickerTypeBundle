@@ -20,9 +20,17 @@
     },
     "autoload": {
         "psr-0": {
-            "Xmon\\ColorPickerTypeBundle": "" 
-            }
+            "Xmon\\ColorPickerTypeBundle": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Xmon\\ColorPickerTypeBundleTests\\": "tests/"
+        }
     },
     "minimum-stability": "dev",
-    "target-dir": "Xmon/ColorPickerTypeBundle"
+    "target-dir": "Xmon/ColorPickerTypeBundle",
+    "require-dev": {
+        "phpunit/phpunit": "^6.5@dev"
+    }
 }
