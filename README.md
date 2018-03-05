@@ -24,10 +24,17 @@ public function registerBundles()
     );
 }
 ```
+## Configuration with Assetic Bundle
+https://symfony.com/doc/2.8/frontend/assetic/asset_management.html
+
 ## Configuration
 
-### Add ColorPickerTypeBundle to assetic
+### Instaling Assetic Bundle (optional)
+If you wish to use Assetic Bundle to manage web assets, please follow this [official guide](https://symfony.com/doc/3.4/frontend/assetic/asset_management.html). However keep in mind that `symfony/assetic-bundle` library has been deprecated and is not actively maintained and it's not compatible with Symfony 4+.
 
+### Add ColorPickerTypeBundle to assetic (optional)
+
+If you choose to use Assetic anyway, add this bundle to Assetic configuration.
 ```yml
 # app/config/config.yml
 # Assetic Configuration
@@ -35,27 +42,33 @@ assetic:
     bundles:        [ 'XmonColorPickerTypeBundle' ]
 ```
 
-### [SYMFONY 2] Include the template for the layout. 
-You can modify the template in your own bundle.
+### Include the template for the layout.
+Add default form field template shipped with the Bundle.
+You can also modify the template in your own bundle and use it instead.
+**NOTE:** Please, use correct template depending your setup - with or without Assetic.
 
+#### [SYMFONY 2]
 ```yml
 # your config.yml
 twig:
     form:
         resources:
-            # This uses the default - you can put your own one here
+            # Add this one if you use assetic
             - 'XmonColorPickerTypeBundle:Form:fields.html.twig'
+            # Add this one if you DON'T use assetic
+            - 'XmonColorPickerTypeBundle:Form:fields_no_assetic.html.twig'
 ```
 
-### [SYMFONY 3] Include the template for the layout.
-You can modify the template in your own bundle.
+#### [SYMFONY 3]
 
 ```yml
 # your config.yml
 twig:
     form_themes:
-            # This uses the default - you can put your own one here
+            # Add this one if you use assetic
             - 'XmonColorPickerTypeBundle:Form:fields.html.twig'
+            # Add this one if you DON'T use assetic
+            - 'XmonColorPickerTypeBundle:Form:fields_no_assetic.html.twig'
 ```
 
 ## Usage
