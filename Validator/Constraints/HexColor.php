@@ -20,7 +20,8 @@ class HexColor extends Constraint {
      * null = The hash isn't checked
      * true = The hash is required
      * false = The hash isn't allowed
-     * @var type 
+     *
+     * @var bool|null
      */
     public $requireHash = false;
 
