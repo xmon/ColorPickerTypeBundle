@@ -2,6 +2,7 @@
 
 namespace Xmon\ColorPickerTypeBundle\DependencyInjection;
 
+use Exception;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -16,6 +17,8 @@ class XmonColorPickerTypeExtension extends Extension
 {
     /**
      * {@inheritDoc}
+     *
+     * @throws Exception
      */
     public function load(array $configs, ContainerBuilder $container)
     {

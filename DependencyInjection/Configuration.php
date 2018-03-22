@@ -2,6 +2,8 @@
 
 namespace Xmon\ColorPickerTypeBundle\DependencyInjection;
 
+use InvalidArgumentException;
+use RuntimeException;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -14,6 +16,9 @@ class Configuration implements ConfigurationInterface
 {
     /**
      * {@inheritDoc}
+     *
+     * @throws RuntimeException
+     * @throws InvalidArgumentException
      */
     public function getConfigTreeBuilder()
     {
